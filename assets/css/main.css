@@ -2208,6 +2208,26 @@ input, select, textarea {
 				border-radius: 0;
 			}
 
+
+			/* 動画の設定（背景画像の上に重ねる） */
+			.image.main video {
+				position: absolute;      /* 画像の上に浮かせる */
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%); /* 完全に真ん中に配置 */
+
+				max-width: 100%;          /* 背景からはみ出ないように幅を制限（調整可） */
+				max-height: 100%;         /* 背景からはみ出ないように高さを制限（重要） */
+				
+				width: auto;             /* 縦横比を維持 */
+				height: auto;            /* 縦横比を維持 */
+				
+				z-index: 1;              /* 画像より前に出す */
+				/* クロップの設定 (上下 右 下 左 の順) */
+				/* 例：左右をそれぞれ10%ずつカットする場合 */
+				clip-path: inset(0 5% 0 5%);
+			}
+
 /* List */
 
 	ol {
